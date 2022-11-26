@@ -36,28 +36,20 @@ int main() {
   for (int j = 0; j < n; j++) 
   {
     Time[j] = ((Xone[j])/(Velocity[j]))/cos(Degrees[j]);
-    cout << Time[j] << endl;
   }
 
   for (int k = 0; k < n; k++) 
   {
     Y[k] = (Velocity[k])*(Time[k])*(sin(Degrees[k]))-4.905*(pow(Time[k],2));
-    cout << Y[k] << endl;
   }
 
   for (int u = 0; u < n; u++) 
   {
     Hone[u] = Hone[u] + 1;
     Htwo[u] = Htwo[u] - 1;
-    cout << Hone[u] << endl;
-    cout << Htwo[u] << endl;
-    if (Y[u] > Hone[u] || Y[u] < Htwo[u])
+    if (Y[u] > Hone[u] && Y[u] < Htwo[u])
       cout << "Safe" << endl;
     else
       cout << "Not Safe" << endl;
-    
   }
-
-  
-  
 }
